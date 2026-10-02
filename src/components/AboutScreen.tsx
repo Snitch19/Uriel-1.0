@@ -73,7 +73,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
           </div>
 
           <div className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container border border-border-line text-[11px] sm:text-xs font-mono text-mute shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
+            <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
             <span className="font-semibold text-ink">Vision Prospectus</span>
             <span>•</span>
             <span>Ekpoma Hub Project</span>
@@ -88,8 +88,8 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
           </p>
 
           {/* Formula Callout */}
-          <div className="p-3 sm:p-4 rounded-xl bg-primary-container/60 border border-primary/20 text-xs sm:text-sm font-mono text-primary-text font-bold text-center">
-            Knowledge + Hardware + 24/7 Solar + Enterprise Internet = Career Pathways
+          <div className="p-3 sm:p-4 rounded-xl bg-surface-container border border-border-line text-xs sm:text-sm font-mono text-ink font-bold text-center">
+            <span className="text-primary">Knowledge</span> + <span className="text-accent">Hardware</span> + <span className="text-primary">24/7 Solar</span> + <span className="text-accent">Enterprise Internet</span> = Career Pathways
           </div>
         </motion.header>
 
@@ -109,7 +109,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
 
           <motion.div whileHover={{ y: -2 }} className="p-4 sm:p-5 rounded-xl bg-surface-card border border-border-line shadow-xs">
             <span className="font-display text-[11px] sm:text-xs font-semibold text-mute uppercase tracking-wider block">Completion Rate</span>
-            <div className="font-display text-2xl min-[400px]:text-3xl sm:text-4xl text-ink font-extrabold tracking-tight mt-1">88%</div>
+            <div className="font-display text-2xl min-[400px]:text-3xl sm:text-4xl text-accent font-extrabold tracking-tight mt-1">88%</div>
             <span className="font-sans text-[11px] sm:text-xs text-mute mt-0.5 block">Cohort retention</span>
           </motion.div>
 
@@ -123,7 +123,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
         {/* Section: Solving "The Practice Gap" */}
         <section className="p-5 sm:p-8 rounded-2xl bg-surface-card border border-border-line space-y-6 shadow-xs">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-primary font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-accent font-bold">
               <span>The Ground Reality</span>
             </div>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-ink tracking-tight">
@@ -162,7 +162,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
             </div>
 
             <div className="p-4 rounded-xl bg-surface-container border border-border-line space-y-2">
-              <span className="material-symbols-outlined text-primary text-2xl">wifi_off</span>
+              <span className="material-symbols-outlined text-accent text-2xl">wifi_off</span>
               <h4 className="font-display text-sm font-bold text-ink">Data Plan Costs</h4>
               <p className="font-sans text-xs text-mute leading-relaxed">
                 Fluctuating mobile carrier data bundles make it cost-prohibitive to clone repositories, run Docker containers, or attend remote standups.
@@ -171,7 +171,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
           </div>
 
           {/* The Current Bottleneck Alert */}
-          <div className="p-4 sm:p-5 rounded-xl bg-primary-container/30 border border-primary/25 space-y-1.5">
+          <div className="p-4 sm:p-5 rounded-xl bg-surface-container border-l-4 border-primary space-y-1.5">
             <div className="flex items-center gap-2 text-primary font-display font-bold text-sm">
               <span className="material-symbols-outlined text-[18px]">warning</span>
               <span>Our Current Bottleneck</span>
@@ -193,7 +193,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
                 A structured, 4-phase talent incubation pipeline engineered to eliminate theoretical stagnation.
               </p>
             </div>
-            <span className="font-mono text-xs font-bold text-primary bg-surface-container px-3 py-1 rounded-full border border-border-line w-fit">
+            <span className="font-mono text-xs font-bold text-accent bg-surface-container px-3 py-1 rounded-full border border-border-line w-fit">
               Learn → Practise → Build → Progress
             </span>
           </div>
@@ -202,6 +202,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
             {phases.map((phase, idx) => {
               const num = idx + 1;
               const isSelected = activePhase === num;
+              const isAccent = num % 2 === 0;
               return (
                 <motion.div
                   key={phase.step}
@@ -209,13 +210,17 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
                   whileHover={{ y: -3 }}
                   className={`p-4 sm:p-5 rounded-2xl bg-surface-card border flex flex-col justify-between space-y-3 cursor-pointer transition-all shadow-xs ${
                     isSelected
-                      ? 'border-primary ring-2 ring-primary/20 shadow-sm'
+                      ? isAccent
+                        ? 'border-accent ring-2 ring-accent/30 shadow-sm'
+                        : 'border-primary ring-2 ring-primary/30 shadow-sm'
                       : 'border-border-line hover:border-outline'
                   }`}
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-extrabold text-primary px-2 py-0.5 rounded bg-primary-container">
+                      <span className={`font-mono text-xs font-extrabold px-2.5 py-0.5 rounded text-white ${
+                        isAccent ? 'bg-accent' : 'bg-primary'
+                      }`}>
                         Phase {phase.step}
                       </span>
                       <span className="font-mono text-[11px] text-mute">{phase.tag}</span>
@@ -225,7 +230,9 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
                       {phase.title}
                     </h3>
 
-                    <h4 className="font-display text-xs font-semibold text-primary">
+                    <h4 className={`font-display text-xs font-semibold ${
+                      isAccent ? 'text-accent' : 'text-primary'
+                    }`}>
                       {phase.subtitle}
                     </h4>
 
@@ -234,7 +241,9 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
                     </p>
                   </div>
 
-                  <div className="pt-2 border-t border-border-line flex items-center justify-between text-xs text-primary font-display font-semibold">
+                  <div className={`pt-2 border-t border-border-line flex items-center justify-between text-xs font-display font-semibold ${
+                    isAccent ? 'text-accent' : 'text-primary'
+                  }`}>
                     <span>{isSelected ? 'Active Focus' : 'Inspect Phase'}</span>
                     <span>→</span>
                   </div>
@@ -268,29 +277,29 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
                 <tr>
                   <td className="py-3.5 px-3 font-display font-bold text-ink">Hardware Access</td>
                   <td className="py-3.5 px-3 text-mute">We can only train students who bring laptops, leaving the most vulnerable behind.</td>
-                  <td className="py-3.5 px-3 font-medium text-ink bg-primary-container/20 rounded">
+                  <td className="py-3.5 px-3 font-medium text-ink bg-surface-container border-l-2 border-primary rounded-r">
                     <strong className="text-primary font-bold">40 Dedicated Workstations:</strong> Pre-configured Core i7 developer desktops democratizing access for all.
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-3 font-display font-bold text-ink">Power Stability</td>
                   <td className="py-3.5 px-3 text-mute">Classes and practice hours frequently interrupted by unpredictable municipal grid blackouts.</td>
-                  <td className="py-3.5 px-3 font-medium text-ink bg-primary-container/20 rounded">
-                    <strong className="text-primary font-bold">24/7 Solar Infrastructure:</strong> 10kVA hybrid inverter &amp; lithium microgrid, allowing students to code day or night.
+                  <td className="py-3.5 px-3 font-medium text-ink bg-surface-container border-l-2 border-accent rounded-r">
+                    <strong className="text-accent font-bold">24/7 Solar Infrastructure:</strong> 10kVA hybrid inverter &amp; lithium microgrid, allowing students to code day or night.
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-3 font-display font-bold text-ink">Student Reach</td>
                   <td className="py-3.5 px-3 text-mute">We cap intake at 25–30 students per year due to physical space and hardware limits.</td>
-                  <td className="py-3.5 px-3 font-medium text-ink bg-primary-container/20 rounded">
+                  <td className="py-3.5 px-3 font-medium text-ink bg-surface-container border-l-2 border-primary rounded-r">
                     <strong className="text-primary font-bold">300+ Students Annually:</strong> Continuous year-round pipeline entering the global digital economy.
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-3 font-display font-bold text-ink">Career Transition</td>
                   <td className="py-3.5 px-3 text-mute">Ad-hoc freelance advice for graduates trying to find opportunities independently.</td>
-                  <td className="py-3.5 px-3 font-medium text-ink bg-primary-container/20 rounded">
-                    <strong className="text-primary font-bold">In-House Dev Studio:</strong> Commercial studio taking on external client contracts, paying top students while they learn.
+                  <td className="py-3.5 px-3 font-medium text-ink bg-surface-container border-l-2 border-accent rounded-r">
+                    <strong className="text-accent font-bold">In-House Dev Studio:</strong> Commercial studio taking on external client contracts, paying top students while they learn.
                   </td>
                 </tr>
               </tbody>
@@ -311,7 +320,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-5 rounded-2xl bg-surface-card border border-border-line space-y-2 shadow-xs">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-1">
+              <div className="w-10 h-10 rounded-lg bg-surface-container border border-border-line flex items-center justify-center text-primary mb-1">
                 <span className="material-symbols-outlined text-2xl">shield</span>
               </div>
               <h3 className="font-display text-base font-bold text-ink">Youth Crime Diversion</h3>
@@ -321,7 +330,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
             </div>
 
             <div className="p-5 rounded-2xl bg-surface-card border border-border-line space-y-2 shadow-xs">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-1">
+              <div className="w-10 h-10 rounded-lg bg-surface-container border border-border-line flex items-center justify-center text-accent mb-1">
                 <span className="material-symbols-outlined text-2xl">currency_exchange</span>
               </div>
               <h3 className="font-display text-base font-bold text-ink">Local Economic Uplift</h3>
@@ -331,7 +340,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
             </div>
 
             <div className="p-5 rounded-2xl bg-surface-card border border-border-line space-y-2 shadow-xs">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-1">
+              <div className="w-10 h-10 rounded-lg bg-surface-container border border-border-line flex items-center justify-center text-accent mb-1">
                 <span className="material-symbols-outlined text-2xl">hub</span>
               </div>
               <h3 className="font-display text-base font-bold text-ink">A Regional Tech Node</h3>
@@ -388,7 +397,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
             </div>
 
             <div className="p-4 rounded-xl bg-surface-container border border-border-line space-y-2">
-              <div className="flex items-center gap-2 text-primary font-bold">
+              <div className="flex items-center gap-2 text-accent font-bold">
                 <span className="material-symbols-outlined text-[18px]">account_balance</span>
                 <span className="font-display text-ink">Dual-Signatory Accounting &amp; Direct Vendor Option</span>
               </div>
@@ -400,7 +409,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
 
           <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-mute border-t border-border-line gap-2">
             <span><strong>Project Lead:</strong> Will Osezele (cruzcreations456@gmail.com • +234 707 117 5635)</span>
-            <span className="font-mono text-primary font-semibold">Node: Ekpoma, Edo State, Nigeria</span>
+            <span className="font-mono text-accent font-semibold">Node: Ekpoma, Edo State, Nigeria</span>
           </div>
         </section>
 
@@ -420,7 +429,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
               onClick={handleSponsor}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-accent-contrast font-display text-sm font-bold shadow-sm transition-all cursor-pointer min-h-[46px] flex items-center justify-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-display text-sm font-bold shadow-sm transition-all cursor-pointer min-h-[46px] flex items-center justify-center"
             >
               Sponsor Workstations
             </motion.button>
@@ -428,7 +437,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ setActiveTab }) => {
               onClick={handleContact}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto px-5 py-3 rounded-lg bg-surface-card border border-border-line hover:border-outline text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
+              className="w-full sm:w-auto px-5 py-3 rounded-lg bg-surface-card border border-border-line hover:border-accent hover:text-accent text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
             >
               Contact Project Lead
             </motion.button>

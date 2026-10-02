@@ -73,17 +73,17 @@ export const Header: React.FC<HeaderProps> = ({
                 <button
                   key={item.id}
                   onClick={() => handleNav(item.id)}
-                  className={`relative px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                  className={`relative px-3.5 py-2 rounded-lg transition-colors cursor-pointer min-h-[40px] flex items-center ${
                     isActive
                       ? 'text-primary font-bold'
-                      : 'text-mute hover:text-ink hover:bg-surface-container'
+                      : 'text-mute hover:text-accent hover:bg-surface-container'
                   }`}
                 >
                   <span>{item.label}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeTabBadge"
-                      className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary rounded-full"
+                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent rounded-full"
                       transition={{ type: 'spring', stiffness: 450, damping: 35 }}
                     />
                   )}
@@ -93,17 +93,17 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Action Controls */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             <motion.button
               aria-label="Toggle color mode"
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.92 }}
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-ink transition-colors cursor-pointer shadow-xs"
+              className="w-10 h-10 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-accent hover:border-accent transition-colors cursor-pointer shadow-xs"
               type="button"
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              <span className="material-symbols-outlined text-[17px] sm:text-[19px]">
+              <span className="material-symbols-outlined text-[20px]">
                 {isDark ? 'light_mode' : 'dark_mode'}
               </span>
             </motion.button>
@@ -112,18 +112,18 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => handleNav('partnership')}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover text-accent-contrast font-display text-xs font-bold tracking-wide transition-all shadow-sm cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-display text-xs font-bold tracking-wide transition-all shadow-sm cursor-pointer min-h-[40px]"
             >
               <span>Sponsor Workstations</span>
-              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
             </motion.button>
 
             <button
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-ink cursor-pointer"
+              className="md:hidden w-10 h-10 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-ink hover:border-outline cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[19px]">
+              <span className="material-symbols-outlined text-[22px]">
                 {mobileMenuOpen ? 'close' : 'menu'}
               </span>
             </button>
@@ -138,24 +138,27 @@ export const Header: React.FC<HeaderProps> = ({
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.22, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden bg-surface-card border-b border-border-line px-4 py-3 flex flex-col gap-1.5 shadow-lg"
+              className="md:hidden overflow-hidden bg-surface-card border-b border-border-line px-4 py-3 flex flex-col gap-1.5 shadow-xl"
             >
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNav(item.id)}
-                  className={`text-left text-sm py-3 px-3.5 rounded-lg font-display transition-colors min-h-[44px] flex items-center ${
+                  className={`text-left text-sm py-3 px-3.5 rounded-lg font-display transition-colors min-h-[46px] flex items-center justify-between ${
                     activeTab === item.id
-                      ? 'bg-surface-container font-bold text-primary'
+                      ? 'bg-surface-container font-bold text-primary border-l-2 border-accent'
                       : 'text-mute hover:text-ink active:bg-surface-container'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {activeTab === item.id && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  )}
                 </button>
               ))}
               <button
                 onClick={() => handleNav('partnership')}
-                className="mt-1 w-full text-center py-3 rounded-lg bg-primary hover:bg-primary-hover text-accent-contrast font-display text-xs font-bold shadow-sm min-h-[44px] flex items-center justify-center gap-1"
+                className="mt-1 w-full text-center py-3.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-display text-sm font-bold shadow-sm min-h-[46px] flex items-center justify-center gap-1.5"
               >
                 <span>Sponsor Workstations</span>
                 <span>→</span>

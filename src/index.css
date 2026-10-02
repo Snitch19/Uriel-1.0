@@ -2,19 +2,23 @@
 
 @theme {
   --color-accent-contrast: #FFFFFF;
-  --color-ink: #18181B;
+  --color-ink: #000000;
   --color-surface: #FFFFFF;
   --color-surface-card: #FFFFFF;
-  --color-surface-container: #FAF8F5;
-  --color-surface-container-high: #F2EFE9;
+  --color-surface-container: #F4F4F5;
+  --color-surface-container-high: #E4E4E7;
   --color-surface-container-low: #FFFFFF;
-  --color-border-line: #E8E4DF;
-  --color-outline: #D7D1CB;
-  --color-mute: #52525B;
-  --color-primary: #EA580C;
-  --color-primary-hover: #C2410C;
-  --color-primary-container: #FFF7ED;
-  --color-primary-text: #C2410C;
+  --color-border-line: #E4E4E7;
+  --color-outline: #D4D4D8;
+  --color-mute: #71717A;
+  --color-primary: #E8480F;
+  --color-primary-hover: #D03D0A;
+  --color-primary-container: rgba(232, 72, 15, 0.1);
+  --color-primary-text: #E8480F;
+  --color-accent: #0244B9;
+  --color-accent-hover: #013694;
+  --color-accent-container: rgba(2, 68, 185, 0.1);
+  --color-accent-text: #0244B9;
 
   --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -51,18 +55,22 @@
 html.dark {
   --color-accent-contrast: #FFFFFF;
   --color-ink: #FFFFFF;
-  --color-surface: #0E0E10;
-  --color-surface-card: #18181B;
-  --color-surface-container: #222225;
-  --color-surface-container-high: #2C2C30;
-  --color-surface-container-low: #121214;
-  --color-border-line: #27272A;
-  --color-outline: #3F3F46;
+  --color-surface: #000000;
+  --color-surface-card: #0A0A0A;
+  --color-surface-container: #171717;
+  --color-surface-container-high: #262626;
+  --color-surface-container-low: #000000;
+  --color-border-line: #262626;
+  --color-outline: #404040;
   --color-mute: #A1A1AA;
-  --color-primary: #F97316;
-  --color-primary-hover: #FB923C;
-  --color-primary-container: #431407;
-  --color-primary-text: #FDBA74;
+  --color-primary: #E8480F;
+  --color-primary-hover: #F0551E;
+  --color-primary-container: rgba(232, 72, 15, 0.2);
+  --color-primary-text: #FFFFFF;
+  --color-accent: #0244B9;
+  --color-accent-hover: #1958DB;
+  --color-accent-container: rgba(2, 68, 185, 0.25);
+  --color-accent-text: #FFFFFF;
 }
 
 /* Professional Typography Hierarchy */
@@ -100,7 +108,7 @@ html.dark {
   scrollbar-width: none;
 }
 
-/* Custom smooth scrollbar with brand orange accent */
+/* Custom smooth scrollbar with brand orange #E8480F and blue #0244B9 accent */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -111,10 +119,10 @@ html.dark {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(234, 88, 12, 0.3);
+  background: rgba(232, 72, 15, 0.4);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(234, 88, 12, 0.6);
+  background: #0244B9;
 }

@@ -66,7 +66,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
           </div>
 
           <div className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-surface-container border border-border-line text-[11px] sm:text-xs font-mono text-mute shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
+            <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
             <span className="font-semibold text-ink">Ekpoma Ground Desk</span>
             <span>•</span>
             <span>Direct Access</span>
@@ -89,9 +89,9 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
             rel="noopener noreferrer"
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-primary/40 transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
+            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-primary transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
           >
-            <div className="w-10 h-10 mx-auto rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-surface-container border border-border-line flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
               <span className="material-symbols-outlined text-2xl">chat</span>
             </div>
             <div className="font-display font-bold text-sm text-ink">WhatsApp Desk</div>
@@ -102,26 +102,26 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
             href="tel:07071175635"
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-primary/40 transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
+            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-accent transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
           >
-            <div className="w-10 h-10 mx-auto rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-surface-container border border-border-line flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
               <span className="material-symbols-outlined text-2xl">call</span>
             </div>
             <div className="font-display font-bold text-sm text-ink">Direct Telephone</div>
-            <div className="font-mono text-xs sm:text-sm text-primary font-bold">07071175635 →</div>
+            <div className="font-mono text-xs sm:text-sm text-accent font-bold">07071175635 →</div>
           </motion.a>
 
           <motion.a
             href="mailto:urielglobal.group@gmail.com"
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-primary/40 transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
+            className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-card border border-border-line hover:border-accent transition-colors block space-y-2 shadow-xs group cursor-pointer min-h-[90px]"
           >
-            <div className="w-10 h-10 mx-auto rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-surface-container border border-border-line flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
               <span className="material-symbols-outlined text-2xl">mail</span>
             </div>
             <div className="font-display font-bold text-sm text-ink">Official Email</div>
-            <div className="font-sans text-xs sm:text-sm text-primary font-bold truncate">urielglobal.group@gmail.com →</div>
+            <div className="font-sans text-xs sm:text-sm text-accent font-bold truncate">urielglobal.group@gmail.com →</div>
           </motion.a>
         </section>
 
@@ -149,10 +149,10 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
                       onClick={() => setSelectedTopic(t)}
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-display text-xs font-semibold transition-all cursor-pointer border min-h-[34px] flex items-center ${
+                      className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-display text-xs font-semibold transition-all cursor-pointer border min-h-[38px] flex items-center ${
                         isSelected
-                          ? 'bg-primary text-accent-contrast border-primary shadow-2xs font-bold'
-                          : 'bg-surface-container text-mute border-border-line hover:text-ink hover:border-outline'
+                          ? 'bg-primary text-white border-primary shadow-2xs font-bold'
+                          : 'bg-surface-container text-mute border-border-line hover:text-accent hover:border-accent'
                       }`}
                     >
                       {t}
@@ -203,7 +203,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
               disabled={isSending}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-3 rounded-lg bg-primary hover:bg-primary-hover text-accent-contrast font-display text-sm font-bold cursor-pointer transition-all shadow-sm flex items-center justify-center gap-2 min-h-[46px]"
+              className="w-full py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-display text-sm font-bold cursor-pointer transition-all shadow-sm flex items-center justify-center gap-2 min-h-[46px]"
             >
               {isSending ? (
                 <>
@@ -224,7 +224,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="p-3 rounded-lg bg-primary-container text-primary-text font-sans text-xs sm:text-sm text-center border border-primary/25 font-semibold"
+                  className="p-3 rounded-lg bg-surface-container text-ink font-sans text-xs sm:text-sm text-center border border-primary font-semibold"
                 >
                   Opening WhatsApp to connect directly with Will Osezele...
                 </motion.div>
@@ -262,7 +262,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
               <p>Want to endow a single workstation (₦250k) right away?</p>
               <button
                 onClick={handleSponsorOne}
-                className="text-primary hover:text-primary-hover font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
+                className="text-accent hover:text-primary font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
               >
                 <span>Sponsor 1 Workstation Now</span>
                 <span>→</span>

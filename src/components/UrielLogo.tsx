@@ -3,19 +3,21 @@ import React from 'react';
 interface UrielLogoProps {
   className?: string;
   size?: number | string;
-  variant?: 'orange-bg' | 'monochrome' | 'orange-mark';
+  variant?: 'orange-bg' | 'monochrome' | 'orange-mark' | 'accent-mark';
 }
 
 /**
  * Official Uriel Initiative Logo ("ui" community mark)
  * Three dots / figures forming "ui" with rounded U and tapered I
+ * Primary: #E8480F (Orange)
+ * Accent: #0244B9 (Blue)
  */
 export const UrielLogo: React.FC<UrielLogoProps> = ({
   className = '',
   size = 36,
   variant = 'orange-bg',
 }) => {
-  // If variant is 'orange-bg', we render the rounded orange square with white mark (exact match to uploaded poster)
+  // If variant is 'orange-bg', we render the rounded orange square with white mark
   if (variant === 'orange-bg') {
     return (
       <svg
@@ -26,8 +28,8 @@ export const UrielLogo: React.FC<UrielLogoProps> = ({
         xmlns="http://www.w3.org/2000/svg"
         className={`rounded-xl shadow-xs overflow-hidden ${className}`}
       >
-        {/* Warm Orange Brand Background */}
-        <rect width="200" height="200" rx="44" fill="#EA580C" />
+        {/* Brand Orange #E8480F Background */}
+        <rect width="200" height="200" rx="44" fill="#E8480F" />
 
         {/* 3 Upper Dots */}
         <circle cx="56" cy="62" r="13" fill="#FFFFFF" />
@@ -63,8 +65,13 @@ export const UrielLogo: React.FC<UrielLogoProps> = ({
     );
   }
 
-  // If variant is 'orange-mark' or 'monochrome'
-  const fillColor = variant === 'orange-mark' ? '#EA580C' : 'currentColor';
+  // If variant is 'orange-mark', 'accent-mark', or 'monochrome'
+  const fillColor =
+    variant === 'orange-mark'
+      ? '#E8480F'
+      : variant === 'accent-mark'
+      ? '#0244B9'
+      : 'currentColor';
 
   return (
     <svg
