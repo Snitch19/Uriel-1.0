@@ -16,6 +16,8 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
   const [isSending, setIsSending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const [waLink, setWaLink] = useState('');
+
   const topics = [
     'Sponsorship',
     'Hardware Donation',
@@ -34,10 +36,17 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
       selectedTopic
     )}%0AMessage: ${encodeURIComponent(proposalMessage)}`;
 
+    const targetUrl = `https://wa.me/2347071175635?text=${waText}`;
+    setWaLink(targetUrl);
+
     setTimeout(() => {
       setIsSending(false);
       setIsSuccess(true);
-      window.open(`https://wa.me/2347071175635?text=${waText}`, '_blank');
+      try {
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      } catch {
+        // Fallback handled by rendered anchor in success UI
+      }
     }, 400);
   };
 
@@ -224,9 +233,20 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ setActiveTab, onSe
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="p-3 rounded-lg bg-surface-container text-ink font-sans text-xs sm:text-sm text-center border border-primary font-semibold"
+                  className="p-3.5 rounded-lg bg-surface-container text-ink font-sans text-xs sm:text-sm text-center border border-primary font-semibold space-y-2"
                 >
-                  Opening WhatsApp to connect directly with Will Osezele...
+                  <p>Inquiry prepared for Will Osezele.</p>
+                  {waLink && (
+                    <a
+                      href={waLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-white text-xs font-bold hover:bg-primary-hover transition-colors"
+                    >
+                      <span>Continue to WhatsApp</span>
+                      <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                    </a>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>

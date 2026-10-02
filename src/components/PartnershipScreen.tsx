@@ -78,6 +78,7 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
   const [bankRef, setBankRef] = useState('');
   const [copied, setCopied] = useState(false);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [waLink, setWaLink] = useState('');
 
   // Slider State
   const [calcSeats, setCalcSeats] = useState<number>(20);
@@ -117,8 +118,15 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
       bankRef || 'Zenith-Transfer'
     )}`;
 
+    const targetUrl = `https://wa.me/2347071175635?text=${message}`;
+    setWaLink(targetUrl);
+
     setTimeout(() => {
-      window.open(`https://wa.me/2347071175635?text=${message}`, '_blank');
+      try {
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      } catch {
+        // Fallback handled by rendered anchor in success UI
+      }
     }, 500);
   };
 
@@ -423,9 +431,20 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    className="p-3 rounded-lg bg-surface-container text-ink font-sans text-xs sm:text-sm text-center border border-primary font-semibold"
+                    className="p-3.5 rounded-lg bg-surface-container text-ink font-sans text-xs sm:text-sm text-center border border-primary font-semibold space-y-2"
                   >
-                    Transfer record logged. Connecting with Will Osezele via WhatsApp...
+                    <p>Transfer record logged. Connecting with Will Osezele via WhatsApp...</p>
+                    {waLink && (
+                      <a
+                        href={waLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-white text-xs font-bold hover:bg-primary-hover transition-colors"
+                      >
+                        <span>Continue to WhatsApp</span>
+                        <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                      </a>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
