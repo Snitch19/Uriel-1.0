@@ -38,8 +38,9 @@ export const Header: React.FC<HeaderProps> = ({
 
   const navItems: { id: PageTab; label: string }[] = [
     { id: 'home', label: 'Overview' },
+    { id: 'about', label: 'About Us' },
     { id: 'partnership', label: 'Sponsorship Packages' },
-    { id: 'contact', label: 'Contact & Hub Visit' },
+    { id: 'contact', label: 'Contact & Hub' },
   ];
 
   return (

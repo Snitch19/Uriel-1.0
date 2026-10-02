@@ -103,6 +103,20 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
               Contact Director
             </motion.button>
           </motion.div>
+
+          <div className="pt-1">
+            <button
+              onClick={() => {
+                setActiveTab('about');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.location.hash = 'about';
+              }}
+              className="text-xs sm:text-sm text-mute hover:text-primary font-display font-semibold transition-colors inline-flex items-center gap-1 cursor-pointer"
+            >
+              <span>Read the Ekpoma Hub Blueprint &amp; Vision</span>
+              <span>→</span>
+            </button>
+          </div>
         </motion.section>
 
         {/* 4 Core Pillars (Mobile: 1 col, Tablet: 2 cols, Desktop: 4 cols) */}

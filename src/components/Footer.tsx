@@ -38,6 +38,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             <button onClick={() => handleNav('home')} className="hover:text-primary transition-colors cursor-pointer py-1">
               Overview
             </button>
+            <button onClick={() => handleNav('about')} className="hover:text-primary transition-colors cursor-pointer py-1">
+              About Us
+            </button>
             <button onClick={() => handleNav('partnership')} className="hover:text-primary transition-colors cursor-pointer py-1">
               Sponsorship Packages
             </button>

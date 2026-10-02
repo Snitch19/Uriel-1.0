@@ -1,4 +1,4 @@
-export type PageTab = 'home' | 'partnership' | 'contact';
+export type PageTab = 'home' | 'about' | 'partnership' | 'contact';
 
 export interface SponsorshipTier {
   id: string;
