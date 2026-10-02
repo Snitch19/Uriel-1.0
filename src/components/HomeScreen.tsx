@@ -120,7 +120,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
           </div>
         </motion.section>
 
-        {/* 4 Core Pillars with Orange Primary and Blue Accent (Mobile: 1 col, Tablet: 2 cols, Desktop: 4 cols) */}
+        {/* 4 Core Pillars with Blue Primary and Orange Accent (Mobile: 1 col, Tablet: 2 cols, Desktop: 4 cols) */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <motion.div
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
