@@ -56,7 +56,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface font-sans text-ink antialiased selection:bg-accent selection:text-white transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-surface font-sans text-ink antialiased selection:bg-primary selection:text-white transition-colors duration-200">
       {/* Header */}
       <Header
         activeTab={activeTab}

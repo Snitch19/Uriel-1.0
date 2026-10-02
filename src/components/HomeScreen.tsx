@@ -58,7 +58,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
             transition={{ duration: 0.4 }}
             className="flex items-center justify-center gap-2"
           >
-            <UrielLogo size={48} variant="orange-bg" className="shadow-sm sm:w-[54px] sm:h-[54px]" />
+            <UrielLogo size={48} variant="blue-bg" className="shadow-sm sm:w-[54px] sm:h-[54px]" />
           </motion.div>
 
           <motion.div
@@ -67,7 +67,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
             transition={{ delay: 0.1, duration: 0.4 }}
             className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-surface-container border border-border-line text-[11px] sm:text-xs font-mono text-mute shadow-2xs max-w-full"
           >
-            <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
+            <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
             <span className="font-semibold text-ink">Ekpoma, Edo State</span>
             <span className="text-border-line">•</span>
             <span className="text-primary font-bold">40 Dedicated Workstations</span>
@@ -99,7 +99,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
               onClick={handleTalkToUs}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-lg bg-surface-card border border-border-line hover:border-accent hover:text-accent text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-lg bg-surface-card border border-border-line hover:border-primary hover:text-primary text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
             >
               Contact Director
             </motion.button>
@@ -112,7 +112,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 window.location.hash = 'about';
               }}
-              className="text-xs sm:text-sm text-mute hover:text-accent font-display font-semibold transition-colors inline-flex items-center gap-1 cursor-pointer py-1"
+              className="text-xs sm:text-sm text-mute hover:text-primary font-display font-semibold transition-colors inline-flex items-center gap-1 cursor-pointer py-1"
             >
               <span>Read the Ekpoma Hub Blueprint &amp; Vision</span>
               <span>→</span>
@@ -120,7 +120,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
           </div>
         </motion.section>
 
-        {/* 4 Core Pillars with Blue Primary and Orange Accent (Mobile: 1 col, Tablet: 2 cols, Desktop: 4 cols) */}
+        {/* 4 Core Pillars with Blue Primary (Mobile: 1 col, Tablet: 2 cols, Desktop: 4 cols) */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <motion.div
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
@@ -150,9 +150,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
 
           <motion.div
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="p-4 sm:p-5 rounded-xl bg-surface-card border border-border-line hover:border-accent/40 space-y-2 shadow-xs transition-all"
+            className="p-4 sm:p-5 rounded-xl bg-surface-card border border-border-line hover:border-primary/40 space-y-2 shadow-xs transition-all"
           >
-            <div className="flex items-center gap-2 text-accent">
+            <div className="flex items-center gap-2 text-primary">
               <span className="material-symbols-outlined text-[22px]">satellite_alt</span>
               <span className="font-display font-bold text-sm text-ink">Starlink Link</span>
             </div>
@@ -163,9 +163,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
 
           <motion.div
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="p-4 sm:p-5 rounded-xl bg-surface-card border border-border-line hover:border-accent/40 space-y-2 shadow-xs transition-all"
+            className="p-4 sm:p-5 rounded-xl bg-surface-card border border-border-line hover:border-primary/40 space-y-2 shadow-xs transition-all"
           >
-            <div className="flex items-center gap-2 text-accent">
+            <div className="flex items-center gap-2 text-primary">
               <span className="material-symbols-outlined text-[22px]">school</span>
               <span className="font-display font-bold text-sm text-ink">Mentorship</span>
             </div>
@@ -200,7 +200,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
                     className={`px-2.5 sm:px-3 py-1.5 rounded-md font-display text-xs font-semibold transition-all cursor-pointer whitespace-nowrap min-h-[38px] flex items-center ${
                       isSelected
                         ? 'bg-primary text-white shadow-2xs font-bold'
-                        : 'text-mute hover:text-accent'
+                        : 'text-mute hover:text-primary'
                     }`}
                   >
                     {t.name} ({t.seats})
@@ -213,7 +213,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
           <div className="space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-1 text-xs sm:text-sm text-mute font-mono">
               <span>Showing: <strong className="text-ink font-semibold">{activeTierName}</strong></span>
-              <span className="text-accent font-bold">₦250,000 / seat / yr</span>
+              <span className="text-primary font-bold">₦250,000 / seat / yr</span>
             </div>
 
             {/* Responsive interactive seat grid (5 cols mobile, 8 tablet, 10 desktop) */}
@@ -234,7 +234,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
                     className={`h-9 min-[400px]:h-10 sm:h-11 rounded-lg flex items-center justify-center font-mono text-xs font-bold transition-colors cursor-pointer border ${
                       isFunded
                         ? 'bg-primary text-white border-primary shadow-2xs'
-                        : 'bg-surface-container text-mute border-border-line hover:border-accent hover:text-accent'
+                        : 'bg-surface-container text-mute border-border-line hover:border-primary hover:text-primary'
                     }`}
                   >
                     {seatNum < 10 ? `0${seatNum}` : seatNum}
@@ -254,14 +254,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
                   <span className="text-mute font-medium">Available</span>
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded bg-accent inline-block"></span>
-                  <span className="text-accent font-semibold">Starlink Link Node</span>
+                  <span className="w-2.5 h-2.5 rounded bg-primary/40 inline-block"></span>
+                  <span className="text-primary font-semibold">Starlink Link Node</span>
                 </span>
               </div>
               <motion.button
                 onClick={handleSponsorClick}
                 whileHover={{ x: 3 }}
-                className="text-accent hover:text-primary font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
+                className="text-primary hover:text-primary-hover font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
               >
                 <span>Sponsor this configuration</span>
                 <span>→</span>
@@ -294,7 +294,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
                     <strong className="text-ink block font-display">Workstation Compute</strong>
                     <p>Intel Core i7, 32GB DDR4 RAM, 1TB NVMe SSD, Dual 24" 1080p IPS displays, ergonomic mechanical keyboard.</p>
                   </div>
-                  <div className="p-3.5 sm:p-4 rounded-lg bg-surface-container border-l-2 border-accent border-t border-r border-b border-border-line space-y-1">
+                  <div className="p-3.5 sm:p-4 rounded-lg bg-surface-container border-l-2 border-primary border-t border-r border-b border-border-line space-y-1">
                     <strong className="text-ink block font-display">Power &amp; Connectivity</strong>
                     <p>10kVA solar hybrid inverter, 15kWh LiFePO4 battery bank, Starlink V2 terminal with automated 4G failover.</p>
                   </div>
@@ -320,7 +320,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
             className="p-3.5 sm:p-5 rounded-xl bg-surface-card border border-border-line shadow-xs"
           >
             <span className="font-display text-[11px] sm:text-xs font-semibold text-mute uppercase tracking-wider block">Alumni</span>
-            <div className="font-display text-2xl min-[400px]:text-3xl sm:text-4xl text-accent font-extrabold tracking-tight mt-1">100+</div>
+            <div className="font-display text-2xl min-[400px]:text-3xl sm:text-4xl text-primary font-extrabold tracking-tight mt-1">100+</div>
             <span className="font-sans text-[11px] sm:text-xs text-mute mt-0.5 block">Graduates placed</span>
           </motion.div>
 
@@ -367,7 +367,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setActiveTab, onSelectTi
               onClick={handleTalkToUs}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto px-5 py-3 rounded-lg bg-surface-card border border-border-line hover:border-accent hover:text-accent text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
+              className="w-full sm:w-auto px-5 py-3 rounded-lg bg-surface-card border border-border-line hover:border-primary hover:text-primary text-ink font-display text-sm font-semibold transition-colors cursor-pointer shadow-xs min-h-[46px] flex items-center justify-center"
             >
               Direct WhatsApp Desk
             </motion.button>

@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
           >
-            <UrielLogo size={34} variant="orange-bg" className="shrink-0 sm:w-9 sm:h-9" />
+            <UrielLogo size={34} variant="blue-bg" className="shrink-0 sm:w-9 sm:h-9" />
             <div className="min-w-0">
               <span className="font-display text-sm sm:text-base md:text-lg font-bold tracking-tight text-ink group-hover:text-primary transition-colors block leading-tight truncate">
                 The Uriel Initiative
@@ -76,14 +76,14 @@ export const Header: React.FC<HeaderProps> = ({
                   className={`relative px-3.5 py-2 rounded-lg transition-colors cursor-pointer min-h-[40px] flex items-center ${
                     isActive
                       ? 'text-primary font-bold'
-                      : 'text-mute hover:text-accent hover:bg-surface-container'
+                      : 'text-mute hover:text-primary hover:bg-surface-container'
                   }`}
                 >
                   <span>{item.label}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeTabBadge"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent rounded-full"
+                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full"
                       transition={{ type: 'spring', stiffness: 450, damping: 35 }}
                     />
                   )}
@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.92 }}
-              className="w-10 h-10 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-accent hover:border-accent transition-colors cursor-pointer shadow-xs"
+              className="w-10 h-10 rounded-lg border border-border-line bg-surface-card flex items-center justify-center text-mute hover:text-primary hover:border-primary transition-colors cursor-pointer shadow-xs"
               type="button"
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
@@ -146,13 +146,13 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNav(item.id)}
                   className={`text-left text-sm py-3 px-3.5 rounded-lg font-display transition-colors min-h-[46px] flex items-center justify-between ${
                     activeTab === item.id
-                      ? 'bg-surface-container font-bold text-primary border-l-2 border-accent'
+                      ? 'bg-surface-container font-bold text-primary border-l-2 border-primary'
                       : 'text-mute hover:text-ink active:bg-surface-container'
                   }`}
                 >
                   <span>{item.label}</span>
                   {activeTab === item.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
                   )}
                 </button>
               ))}

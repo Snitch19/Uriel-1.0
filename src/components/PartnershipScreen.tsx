@@ -142,11 +142,11 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
           className="text-center space-y-3.5 sm:space-y-4 max-w-xl mx-auto pt-1 sm:pt-2"
         >
           <div className="flex items-center justify-center">
-            <UrielLogo size={48} variant="orange-bg" className="shadow-xs sm:w-[54px] sm:h-[54px]" />
+            <UrielLogo size={48} variant="blue-bg" className="shadow-xs sm:w-[54px] sm:h-[54px]" />
           </div>
 
           <div className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-surface-container border border-border-line text-[11px] sm:text-xs font-mono text-mute shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
+            <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
             <span className="font-semibold text-ink">Verified Hardware Funding</span>
             <span>•</span>
             <span>Ekpoma, Nigeria</span>
@@ -167,7 +167,7 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
             <h2 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-ink tracking-tight">
               Sponsorship Levels
             </h2>
-            <span className="font-mono text-xs font-semibold text-accent bg-surface-container px-3 py-1 rounded-full border border-border-line w-fit">
+            <span className="font-mono text-xs font-semibold text-primary bg-surface-container px-3 py-1 rounded-full border border-border-line w-fit">
               100% Directed to Ekpoma Hub
             </span>
           </div>
@@ -184,17 +184,15 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                     tier.popular
                       ? 'border-primary ring-2 ring-primary/30 shadow-sm'
                       : isPlatinum
-                      ? 'border-accent ring-1 ring-accent/30 shadow-xs'
+                      ? 'border-primary ring-1 ring-primary/30 shadow-xs'
                       : isSelected
                       ? 'border-primary ring-1 ring-primary/40'
-                      : 'border-border-line hover:border-accent'
+                      : 'border-border-line hover:border-primary/50'
                   }`}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-xs">
-                      <span className={`font-display font-bold uppercase tracking-wider ${
-                        tier.popular ? 'text-primary' : 'text-accent'
-                      }`}>
+                      <span className="font-display font-bold uppercase tracking-wider text-primary">
                         {tier.kicker}
                       </span>
                       <span className="font-mono font-bold bg-surface-container text-ink px-2.5 py-0.5 rounded border border-border-line">
@@ -212,7 +210,7 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                     <ul className="space-y-2 font-sans text-xs sm:text-sm text-mute border-t border-border-line pt-3">
                       {tier.features.map((feat, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className={tier.popular ? 'text-primary font-bold shrink-0' : 'text-accent font-bold shrink-0'}>✓</span>
+                          <span className="text-primary font-bold shrink-0">✓</span>
                           <span className="leading-snug">{feat}</span>
                         </li>
                       ))}
@@ -227,10 +225,10 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                       tier.popular
                         ? 'bg-primary hover:bg-primary-hover text-white'
                         : isPlatinum
-                        ? 'bg-accent hover:bg-accent-hover text-white'
+                        ? 'bg-primary hover:bg-primary-hover text-white'
                         : isSelected
                         ? 'bg-primary text-white'
-                        : 'bg-surface-container hover:bg-surface-container-high text-ink border border-border-line hover:border-accent'
+                        : 'bg-surface-container hover:bg-surface-container-high text-ink border border-border-line hover:border-primary'
                     }`}
                   >
                     {isSelected ? '✓ Selected' : `Select ${tier.name}`}
@@ -292,7 +290,7 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                 const element = document.getElementById('bank-details');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-accent hover:text-primary font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
+              className="text-primary hover:text-primary-hover font-display text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer py-1"
             >
               <span>Transfer coordinates below</span>
               <span>↓</span>
@@ -340,12 +338,12 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                       onClick={handleCopyAccount}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-3 py-2 bg-surface-container hover:bg-surface-container-high rounded-md font-display text-xs font-bold text-ink border border-border-line hover:border-accent flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs min-h-[38px]"
+                      className="px-3 py-2 bg-surface-container hover:bg-surface-container-high rounded-md font-display text-xs font-bold text-ink border border-border-line hover:border-primary flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs min-h-[38px]"
                     >
-                      <span className="material-symbols-outlined text-[16px] text-accent">
+                      <span className="material-symbols-outlined text-[16px] text-primary">
                         {copied ? 'check' : 'content_copy'}
                       </span>
-                      <span className={copied ? 'text-accent' : ''}>{copied ? 'Copied!' : 'Copy'}</span>
+                      <span className={copied ? 'text-primary' : ''}>{copied ? 'Copied!' : 'Copy'}</span>
                     </motion.button>
                   </div>
                 </div>
@@ -357,7 +355,7 @@ export const PartnershipScreen: React.FC<PartnershipScreenProps> = ({ initialTie
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3 rounded-lg bg-surface-card border border-border-line hover:border-accent hover:text-accent font-display text-xs sm:text-sm font-bold text-center block text-ink transition-colors shadow-2xs min-h-[44px] flex items-center justify-center"
+                className="w-full py-3 rounded-lg bg-surface-card border border-border-line hover:border-primary hover:text-primary font-display text-xs sm:text-sm font-bold text-center block text-ink transition-colors shadow-2xs min-h-[44px] flex items-center justify-center"
               >
                 Instant WhatsApp Confirmation (+234 707 117 5635)
               </motion.a>

@@ -15,10 +15,10 @@
   --color-primary-hover: #013694;
   --color-primary-container: rgba(2, 68, 185, 0.1);
   --color-primary-text: #0244B9;
-  --color-accent: #E8480F;
-  --color-accent-hover: #D03D0A;
-  --color-accent-container: rgba(232, 72, 15, 0.1);
-  --color-accent-text: #E8480F;
+  --color-accent: #0244B9;
+  --color-accent-hover: #013694;
+  --color-accent-container: rgba(2, 68, 185, 0.1);
+  --color-accent-text: #0244B9;
 
   --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -67,9 +67,9 @@ html.dark {
   --color-primary-hover: #1958DB;
   --color-primary-container: rgba(2, 68, 185, 0.25);
   --color-primary-text: #FFFFFF;
-  --color-accent: #E8480F;
-  --color-accent-hover: #F0551E;
-  --color-accent-container: rgba(232, 72, 15, 0.2);
+  --color-accent: #0244B9;
+  --color-accent-hover: #1958DB;
+  --color-accent-container: rgba(2, 68, 185, 0.2);
   --color-accent-text: #FFFFFF;
 }
 
@@ -108,7 +108,7 @@ html.dark {
   scrollbar-width: none;
 }
 
-/* Custom smooth scrollbar with brand blue #0244B9 and orange #E8480F accent */
+/* Custom smooth scrollbar with brand blue #0244B9 */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -124,5 +124,5 @@ html.dark {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E8480F;
+  background: #0244B9;
 }

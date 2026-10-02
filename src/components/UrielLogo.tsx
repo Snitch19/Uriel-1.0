@@ -10,12 +10,11 @@ interface UrielLogoProps {
  * Official Uriel Initiative Logo ("ui" community mark)
  * Three dots / figures forming "ui" with rounded U and tapered I
  * Primary: #0244B9 (Blue)
- * Accent: #E8480F (Orange)
  */
 export const UrielLogo: React.FC<UrielLogoProps> = ({
   className = '',
   size = 36,
-  variant = 'orange-bg',
+  variant = 'blue-bg',
 }) => {
   // If variant is 'orange-bg' or 'blue-bg', we render the rounded primary blue square with white mark
   if (variant === 'orange-bg' || variant === 'blue-bg') {
@@ -28,7 +27,7 @@ export const UrielLogo: React.FC<UrielLogoProps> = ({
         xmlns="http://www.w3.org/2000/svg"
         className={`rounded-xl shadow-xs overflow-hidden ${className}`}
       >
-        {/* Brand Blue #0244B9 Background (Switched from Orange) */}
+        {/* Brand Blue #0244B9 Background */}
         <rect width="200" height="200" rx="44" fill="#0244B9" />
 
         {/* 3 Upper Dots */}
@@ -67,13 +66,9 @@ export const UrielLogo: React.FC<UrielLogoProps> = ({
 
   // If variant is 'orange-mark', 'accent-mark', 'blue-mark', or 'monochrome'
   const fillColor =
-    variant === 'orange-mark'
-      ? '#0244B9'
-      : variant === 'accent-mark'
-      ? '#E8480F'
-      : variant === 'blue-mark'
-      ? '#0244B9'
-      : 'currentColor';
+    variant === 'monochrome'
+      ? 'currentColor'
+      : '#0244B9';
 
   return (
     <svg

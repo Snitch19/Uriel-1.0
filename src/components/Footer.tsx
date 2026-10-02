@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 pb-6 border-b border-border-line">
           <div className="flex items-center gap-3">
-            <UrielLogo size={36} variant="orange-bg" className="shrink-0" />
+            <UrielLogo size={36} variant="blue-bg" className="shrink-0" />
             <div>
               <span className="font-display text-base sm:text-lg font-bold text-ink block tracking-tight">
                 The Uriel Initiative
@@ -35,16 +35,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-display text-xs sm:text-sm font-semibold text-mute">
-            <button onClick={() => handleNav('home')} className="hover:text-accent transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
+            <button onClick={() => handleNav('home')} className="hover:text-primary transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
               Overview
             </button>
-            <button onClick={() => handleNav('about')} className="hover:text-accent transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
+            <button onClick={() => handleNav('about')} className="hover:text-primary transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
               About Us
             </button>
-            <button onClick={() => handleNav('partnership')} className="hover:text-accent transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
+            <button onClick={() => handleNav('partnership')} className="hover:text-primary transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
               Sponsorship Packages
             </button>
-            <button onClick={() => handleNav('contact')} className="hover:text-accent transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
+            <button onClick={() => handleNav('contact')} className="hover:text-primary transition-colors cursor-pointer py-1 min-h-[36px] flex items-center">
               Contact &amp; Hub Visit
             </button>
           </div>
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             onClick={scrollToTop}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="font-display font-semibold text-accent hover:text-primary cursor-pointer text-xs flex items-center gap-1 py-1 min-h-[36px]"
+            className="font-display font-semibold text-primary hover:text-primary-hover cursor-pointer text-xs flex items-center gap-1 py-1 min-h-[36px]"
             type="button"
           >
             <span>Back to top</span>
